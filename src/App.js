@@ -1,20 +1,20 @@
-import React, { useState } from "react";
-import { v4 as uuid } from "uuid";
+import React, { useState } from "react"
+import { v4 as uuid } from "uuid"
 
-import ToDoList from "./components/ToDoList";
+import ToDoList from "./components/ToDoList"
 
 const App = () => {
-  const [inputText, setInputText] = useState("");
+  const [inputText, setInputText] = useState("")
   const [tasks, setTasks] = useState([]);
 
-  const [isDone, setDone] = useState(false)
+  // const [isDone, setDone] = useState(false)
 
   const handleAddTask = task => {
     if (task.length) {
-      const newTask = { id: uuid(), done: false, task };
+      const newTask = { id: uuid(), done: false, task }
 
-      setTasks([...tasks, newTask]);
-      setInputText("");
+      setTasks([...tasks, newTask])
+      setInputText("")
     }
   };
 
@@ -25,7 +25,7 @@ const App = () => {
     setTasks(tasks.map(task => id === task.id ? {...task, task: newTask} : task ))
 
     const handleTogleDone = id => 
-      setDone(tasks.map(task => id === task.id ? {...task, done: !isDone} : task))
+      setTasks(tasks.map(task => id === task.id ? {...task, done: !task.done} : task))
     
 
   return (
@@ -41,7 +41,6 @@ const App = () => {
         value={inputText} 
         placeholder="Your task here ..." 
         onChange={({target: { value } }) => setInputText(value)}
-        // onKeyPress={handleAddTask()}
         />
 
         <button 
@@ -62,7 +61,7 @@ const App = () => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App

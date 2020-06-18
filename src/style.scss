@@ -126,7 +126,12 @@ $trans: .2s ease-in;
 }
 
 .to-do-task_done {
-    border: 3px solid red;
+    opacity: 0.4;
+    text-decoration: line-through;
+}
+
+.save-task_done, .edit-task_done {
+    display: none;
 }
 
 .task-item {
@@ -168,6 +173,7 @@ $trans: .2s ease-in;
         height: 36px;
         width: 36px;
         border: 3px solid $color-green;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin: 4px;
         font-size: 14px;
         font-weight: bold;

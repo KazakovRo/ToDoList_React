@@ -1,49 +1,50 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react"
 
 const ToDoItem = ({ task: { id, done, task }, handleDeleteTask, handleEditTask, handleTogleDone }) => {
   
-  const [taskText, setTaskText] = useState(task);
+  const [taskText, setTaskText] = useState(task)
   const [isEdit, setEdit] = useState(false)
 
-  // const [isDone, setDone] = useState(done)
+  const inputElem = useRef()
+
+  const handleEditAction = () => {
+    setEdit(true) 
+    inputElem.current.focus()
+  }
 
   const handleSaveTask = id => {
     handleEditTask(id, taskText)
     setEdit(false)
   }
 
-  // const handleTogleDone = id => {
-  //   setDone(tasks.map(task => id === task.id ? {...task, done: !isDone} : task))
-  // }
-
   return (
     <li className="task-item">
 
       <input
         type="text"
-        className="to-do-task"
+        className={`to-do-task ${done ? 'to-do-task_done' : '' }`}
         value={taskText}
-        onChange={({ target: { value } }) => setTaskText(value)}
-        readOnly
-        onClick={() => handleTogleDone(id) }
+        onChange={({ target: { value } }) => value ? setTaskText(value) : handleDeleteTask(id)}
+        readOnly={isEdit ? false : true}
+        onClick={isEdit ? null : () => handleTogleDone(id)}
+        ref={inputElem}
       />
 
       {isEdit ?
-        <button className="save-task" onClick={() => handleSaveTask(id)}>
+        <button className={`save-task ${done ? 'save-task_done' : ''}`} onClick={() => handleSaveTask(id)}>
         Save
-      </button>
+      </button> 
       :
-        <button className="edit-task" onClick={() => setEdit(true)}>
+        <button className={`edit-task ${done ? 'edit-task_done' : ''}`} onClick={() => handleEditAction()}>
         Edit
       </button>
       }
 
       <button className="delete-task" onClick={() => handleDeleteTask(id)}>
         X
-        {/* &times; */}
       </button>
     </li>
-  );
-};
+  )
+}
 
-export default ToDoItem;
+export default ToDoItem

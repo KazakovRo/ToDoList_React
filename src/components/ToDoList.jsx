@@ -1,8 +1,7 @@
-import React from "react";
-import ToDoItem from "./ToDoItem";
+import React from "react"
+import ToDoItem from "./ToDoItem"
 
-const ToDoList = ({ tasks, handleDeleteTask, handleEditTask, handleTogleDone }) => {
-  return (
+const ToDoList = ({ tasks, handleDeleteTask, handleEditTask, handleTogleDone }) => (
     <ul>
       {tasks.map(task => (
         <ToDoItem 
@@ -10,12 +9,10 @@ const ToDoList = ({ tasks, handleDeleteTask, handleEditTask, handleTogleDone }) 
         task={task} 
         handleDeleteTask={handleDeleteTask}
         handleEditTask={handleEditTask}
-        // tasks={tasks}
         handleTogleDone={handleTogleDone}
         />
       ))}
     </ul>
-  );
-};
+)
 
-export default ToDoList;
+export default ToDoList
