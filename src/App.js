@@ -7,8 +7,6 @@ const App = () => {
   const [inputText, setInputText] = useState("")
   const [tasks, setTasks] = useState([]);
 
-  // const [isDone, setDone] = useState(false)
-
   const handleAddTask = task => {
     if (task.length) {
       const newTask = { id: uuid(), done: false, task }
@@ -31,7 +29,7 @@ const App = () => {
   return (
     <div className="wrap">
       
-      <div className = "header-app">
+      <div className="header-app">
         <h1>React To do list</h1>
 
         <div className="input-data">

@@ -1,17 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noticia+Text:ital@1&display=swap");
 
-// $color-bg: 	#bde4b179;
-// $color-bg: 	#eeab2d6e;
-$color-bg: #fffb0091;
-
-// $color-hov: #50cdff;
+$color-bg: 	#91ff0242;
 $color-hov: #ffa600;
 $color-red: rgba(250, 40, 40, 0.897);
 $color-red-hov: rgba(250, 40, 40, 0.719);
 
 $color-green: #3d9e30;
 $color-white: #ffffff;
+$color-black: #000000;
 $color-btn: rgba(13, 253, 33, 0.349);
 
 $trans: .2s ease-in;
@@ -32,7 +29,7 @@ $trans: .2s ease-in;
     }
 
     ::placeholder {
-        color: $color-white;
+        color: $color-black;
     }
 }
 
@@ -41,59 +38,47 @@ $trans: .2s ease-in;
     flex-direction: column;
     justify-content: center;
 
-    color: $color-white;
     width: 100%;
     height: 169px;
-    background-image: url(./todoractbg.jpeg);
-    background-position: 9% 31%;
 
     >h1 {
         text-align: center;
         font-family: 'Indie Flower', cursive;
         font-size: 60px;
     }
-}
 
-.wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.task-item {
-    display: flex;
-    align-items: center;
-}
-
-.input-data {
-    padding: 4px;
-    width: 100%;
-
-    display: flex;
-    justify-content: center;
-
-    input {
-        padding: 4px 16px;
-        width: 420px;
-        margin-right: 10px;
-        border-radius: 20px;
-        background-color: $color-btn;
-        border: 3px solid $color-green;
-        color: $color-white;
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 17px;
+    &:first-child {
+        margin-top: 36px;
     }
 
+
+    .input-data {
+        padding: 4px;
+        width: 100%;
+        margin-top: 14px;
+    
+        display: flex;
+        justify-content: center;
+    
+        input {
+            padding: 4px 16px;
+            width: 440px;
+            margin-right: 10px;
+            border: 1px solid $color-green;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 17px;
+        }
+    }
+
+
     .add-task {
-        border-radius: 20px;
         height: 34px;
-        border: 3px solid $color-green;
+        border: 1.5px solid $color-green;
         width:  100px;
 
         background-color: $color-btn;
         transition: background-color $trans;
-        color: $color-white;
         font-weight: bold;
         font-size: 14px;
         line-height: 17px;
@@ -109,6 +94,17 @@ $trans: .2s ease-in;
     }
 }
 
+.wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+}
+
 .body-app {
     display: flex;
     justify-content: center;
@@ -121,8 +117,7 @@ $trans: .2s ease-in;
     height: 36px ;
     padding: 7px 11px;
     margin: 6px;
-    border: 3px solid $color-green;
-    border-radius: 20px;
+    border: 1.5px solid $color-green;
 }
 
 .to-do-task_done {
@@ -136,7 +131,6 @@ $trans: .2s ease-in;
 
 .task-item {
     .edit-task, .save-task {
-        border-radius: 20px;
         height: 36px;
         width: 60px;
         margin: 6px 4px;
@@ -157,22 +151,21 @@ $trans: .2s ease-in;
     .edit-task {
         background-color: $color-btn;
         transition: background-color $trans;
-        border: 3px solid $color-green;
+        border: 1.5px solid $color-green;
     }
 
     .save-task {
         background-color: $color-green;
         transition: background-color $trans;
-        border: 3px solid $color-btn;
+        border: 1.5px solid $color-btn;
         color: $color-white;
         
     }
 
     .delete-task {
-        border-radius: 20px;
         height: 36px;
         width: 36px;
-        border: 3px solid $color-green;
+        border: 1.5px solid $color-green;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin: 4px;
         font-size: 14px;
@@ -193,10 +186,10 @@ $trans: .2s ease-in;
     }
     
     &:first-child {
-        margin-top: 36px;
+        margin-top: 24px;
     }
 
     &:last-child {
-        margin-bottom: 36px;
+        margin-bottom: 24px;
     }
 }
